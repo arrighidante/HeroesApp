@@ -1,14 +1,14 @@
-@if (message) {
+@if (heroe) {
   <ion-item
-    [routerLink]="'/message/' + message.id"
+    [routerLink]="'/message/' + heroe.id"
     [detail]="false"
     >
-    <div slot="start" [class]="!message.read ? 'dot dot-unread' : 'dot'"></div>
+    <div slot="start" [class]="!heroe.read ? 'dot dot-unread' : 'dot'"></div>
     <ion-label class="ion-text-wrap">
       <h2>
-        {{ message.fromName }}
+        {{ heroe.fromName }}
         <span class="date">
-          <ion-note>{{ message.date }}</ion-note>
+          <ion-note>{{ heroe.date }}</ion-note>
           @if (isIos()) {
             <ion-icon
               aria-hidden="true"
@@ -18,7 +18,7 @@
           }
         </span>
       </h2>
-      <h3>{{ message.subject }}</h3>
+      <h3>{{ heroe.subject }}</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

@@ -14,14 +14,14 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        Inbox
+        Listado de Superheroes
       </ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-list>
-    @for (message of getMessages(); track message) {
-      <app-message [message]="message"></app-message>
+    @for (hero of getMessages(); track hero) {
+      <app-heroe [heroe]="hero"></app-heroe>
     }
   </ion-list>
 </ion-content>

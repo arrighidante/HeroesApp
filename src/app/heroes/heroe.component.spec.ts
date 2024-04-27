@@ -2,19 +2,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { ViewMessagePage } from '../view-message/view-message.page';
 
-import { MessageComponent } from './message.component';
+import { HeroeComponent } from './heroe.component';
 
 describe('MessageComponent', () => {
-  let component: MessageComponent;
-  let fixture: ComponentFixture<MessageComponent>;
+  let component: HeroeComponent;
+  let fixture: ComponentFixture<HeroeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MessageComponent, ViewMessagePage],
+      imports: [HeroeComponent, ViewMessagePage],
       providers: [provideRouter([])]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MessageComponent);
+    fixture = TestBed.createComponent(HeroeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
