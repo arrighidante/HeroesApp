@@ -1,0 +1,7 @@
+{
+  "name": "HeroesApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
