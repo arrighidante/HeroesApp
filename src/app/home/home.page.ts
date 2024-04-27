@@ -2,8 +2,8 @@
 import { Component, inject } from '@angular/core';
 import { RefresherCustomEvent, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList } from '@ionic/angular/standalone';
 
-import { DataService, Message } from '../services/data.service';
-import { HeroeComponent } from '../heroes/heroe.component';
+import { HeroeComponent } from '@heroes/heroe.component';
+import { DataService, Message } from '@services/data.service';
 
 @Component({
   selector: 'app-home',
