@@ -6,7 +6,7 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'message/:id',
+    path: 'hero/:id',
     loadComponent: () =>
       import('./view-message/view-message.page').then((m) => m.ViewMessagePage),
   },
