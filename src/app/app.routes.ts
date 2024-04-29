@@ -3,12 +3,13 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    loadComponent: () =>
+      import('./pages/home/home.page').then((m) => m.HomePage),
   },
   {
     path: 'hero/:id',
     loadComponent: () =>
-      import('./view-message/view-message.page').then((m) => m.ViewMessagePage),
+      import('./pages/hero/hero.page').then((m) => m.HeroPage),
   },
   {
     path: '',
@@ -16,4 +17,3 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
 ];
-

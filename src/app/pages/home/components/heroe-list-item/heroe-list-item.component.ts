@@ -1,10 +1,23 @@
-
-import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  Output,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Platform, IonItem, IonLabel, IonNote, IonIcon, IonAvatar } from '@ionic/angular/standalone';
+import { IHeroSummary } from '@interfaces/heroe-summary.interface';
+import {
+  IonAvatar,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonNote,
+  Platform,
+} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronForward } from 'ionicons/icons';
-import { IHeroSummary } from '@interfaces/heroe-summary.interface';
 
 @Component({
   selector: 'app-heroe-item',
@@ -17,11 +30,17 @@ import { IHeroSummary } from '@interfaces/heroe-summary.interface';
 export class HeroeListItemComponent {
   private platform = inject(Platform);
   @Input() heroeSummary?: IHeroSummary;
+  @Output() heroSelected = new EventEmitter<number>();
 
   isIos() {
-    return this.platform.is('ios')
+    return this.platform.is('ios');
   }
+
   constructor() {
     addIcons({ chevronForward });
+  }
+
+  selectHero() {
+    this.heroSelected.emit(this.heroeSummary?.id);
   }
 }

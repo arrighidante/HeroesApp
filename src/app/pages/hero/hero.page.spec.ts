@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
-import { ViewMessagePage } from './view-message.page';
+import { HeroPage } from './hero.page';
 
 describe('ViewMessagePage', () => {
-  let component: ViewMessagePage;
-  let fixture: ComponentFixture<ViewMessagePage>;
+  let component: HeroPage;
+  let fixture: ComponentFixture<HeroPage>;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [ViewMessagePage],
+      imports: [HeroPage],
       providers: [provideRouter([])],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ViewMessagePage);
+    fixture = TestBed.createComponent(HeroPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

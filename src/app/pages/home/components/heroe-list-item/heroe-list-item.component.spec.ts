@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { ViewMessagePage } from '../view-message/view-message.page';
+import { HeroPage } from '../../../hero/hero.page';
 
 import { HeroeListItemComponent } from './heroe-list-item.component';
 
@@ -10,8 +10,8 @@ describe('MessageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeroeListItemComponent, ViewMessagePage],
-      providers: [provideRouter([])]
+      imports: [HeroeListItemComponent, HeroPage],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeroeListItemComponent);

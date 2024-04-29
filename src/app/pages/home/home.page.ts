@@ -10,11 +10,12 @@ import {
   RefresherCustomEvent,
 } from '@ionic/angular/standalone';
 
+import { Router } from '@angular/router';
 import { IHero } from '@data/interfaces/marvel-entity-types/heroe-interface';
 import { HeroesService } from '@data/services/heroes.service';
-import { HeroeListItemComponent } from '@heroes/heroe-list-item.component';
 import { IHeroSummary } from '@interfaces/heroe-summary.interface';
 import { catchError, of } from 'rxjs';
+import { HeroeListItemComponent } from './components/heroe-list-item/heroe-list-item.component';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +36,7 @@ import { catchError, of } from 'rxjs';
 })
 export class HomePage {
   private _heroesService = inject(HeroesService);
-
+  private _router = inject(Router);
   public heroesList = signal<IHeroSummary[]>([]);
   heroesLimit = signal(20);
 
@@ -50,6 +51,11 @@ export class HomePage {
 
     // Using Capacitor's community plugin
     // this.getHeroesCCommunity();
+  }
+
+  onHeroSelected(heroId: number) {
+    const selectedHero = this.heroesList().find((hero) => hero.id === heroId);
+    this._router.navigate([`/hero/${heroId}`], { state: { selectedHero } });
   }
 
   //#region *** getHeroes different alternatives
