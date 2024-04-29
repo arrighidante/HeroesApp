@@ -18,7 +18,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": true,
             "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -36,12 +35,6 @@
             "scripts": []
           },
           "configurations": {
-            "en-US": {
-              "localize": ["en-US"]
-            },
-            "es": {
-              "localize": ["es"]
-            },
             "production": {
               "budgets": [
                 {

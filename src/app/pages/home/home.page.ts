@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 import { IHero } from '@data/interfaces/marvel-entity-types/heroe-interface';
 import { HeroesService } from '@data/services/heroes.service';
 import { IHeroSummary } from '@interfaces/heroe-summary.interface';
+import { TranslateModule } from '@ngx-translate/core';
 import { catchError, of } from 'rxjs';
 import { HeroeListItemComponent } from './components/heroe-list-item/heroe-list-item.component';
 
@@ -31,6 +32,7 @@ import { HeroeListItemComponent } from './components/heroe-list-item/heroe-list-
     IonRefresherContent,
     IonList,
     HeroeListItemComponent,
+    TranslateModule,
   ],
   providers: [HeroesService],
 })
