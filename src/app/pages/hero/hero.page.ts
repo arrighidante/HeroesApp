@@ -17,11 +17,13 @@ import {
   IonLabel,
   IonList,
   IonNote,
+  IonTitle,
   IonToolbar,
   Platform,
 } from '@ionic/angular/standalone';
+import { TranslateModule } from '@ngx-translate/core';
 import { addIcons } from 'ionicons';
-import { idCardOutline } from 'ionicons/icons';
+import { arrowBackCircleOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-hero',
@@ -45,6 +47,8 @@ import { idCardOutline } from 'ionicons/icons';
     IonCardSubtitle,
     IonCardTitle,
     IonList,
+    IonTitle,
+    TranslateModule,
   ],
 })
 export class HeroPage {
@@ -54,17 +58,18 @@ export class HeroPage {
   hero = signal<IHeroSummary | undefined>(undefined);
 
   constructor() {
-    addIcons({ idCardOutline });
+    addIcons({ arrowBackCircleOutline });
+
     const navigation = this._router.getCurrentNavigation();
     const state = navigation?.extras.state;
+
     if (state) {
       const selectedHero = state['selectedHero'];
       this.hero.set(selectedHero);
     }
   }
 
-  getBackButtonText() {
-    const isIos = this.platform.is('ios');
-    return isIos ? 'Home' : '';
+  get isIos() {
+    return this.platform.is('ios');
   }
 }

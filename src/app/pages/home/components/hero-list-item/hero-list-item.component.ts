@@ -20,9 +20,9 @@ import { addIcons } from 'ionicons';
 import { chevronForward } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-heroe-item',
-  templateUrl: './heroe-list-item.component.html',
-  styleUrls: ['./heroe-list-item.component.scss'],
+  selector: 'app-hero-item',
+  templateUrl: './hero-list-item.component.html',
+  styleUrls: ['./hero-list-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [RouterLink, IonItem, IonLabel, IonNote, IonIcon, IonAvatar],

@@ -1,79 +1,57 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-icon
-      aria-hidden="true"
-      name="id-card-outline"
-      color="primary"
-      slot="end"
-    ></ion-icon>
     <ion-buttons slot="start">
       <ion-back-button
-        [text]="getBackButtonText()"
+        color="marvel"
         defaultHref="/"
+        icon="arrow-back-circle-outline"
+        [text]=" isIos ? ('back-button' | translate) : ''"
       ></ion-back-button>
     </ion-buttons>
+    <ion-title> {{hero()?.name}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 @if (hero()) {
 <ion-content [fullscreen]="true">
+  <!-- OBS: 5) This card could be extracted to another component
+  located at 'pages/hero/components/hero-card' or 'shared/components/hero/hero-card'  -->
   <ion-card>
     <img alt="Silhouette of mountains" [src]="hero()?.thumbnailPath" />
     <ion-card-header>
-      <ion-card-title>{{hero()?.name}}</ion-card-title>
-      <ion-card-subtitle>ID - {{hero()?.id}}</ion-card-subtitle>
+      <ion-icon
+        aria-hidden="true"
+        name="id-card-outline"
+        color="primary"
+      ></ion-icon>
+
+      <ion-card-title>
+        <h2>{{ 'more-info' | translate}}</h2>
+      </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
       <ion-list>
         <ion-item lines="none">
           <ion-label>
-            <h3>Available series</h3>
-            <ion-note>{{hero()?.seriesAvailable}} </ion-note>
+            <h2>{{'available-series' | translate}}</h2>
           </ion-label>
+          <ion-badge color="marvel">{{hero()?.seriesAvailable}} </ion-badge>
         </ion-item>
         <ion-item lines="none">
           <ion-label>
-            <h3>Available comics</h3>
-            <ion-note>{{hero()?.comicsAvailable}} </ion-note>
+            <h2>{{'available-comics' | translate}}</h2>
           </ion-label>
+          <ion-badge color="marvel">{{hero()?.comicsAvailable}} </ion-badge>
         </ion-item>
         <ion-item lines="none">
           <ion-label>
-            <h3>Available stories</h3>
-            <ion-note> {{hero()?.storiesAvailable}}</ion-note>
+            <h2>{{'available-stories' | translate}}</h2>
           </ion-label>
+          <ion-badge color="marvel"> {{hero()?.storiesAvailable}}</ion-badge>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <!-- <ion-item>
-    <ion-icon
-      aria-hidden="true"
-      name="person-circle"
-      color="primary"
-    ></ion-icon>
-    <ion-label class="ion-text-wrap">
-      <h2>
-        {{ heroe.name }}
-        <span class="date">
-          <ion-note>{{ heroe.id }}</ion-note>
-        </span>
-      </h2>
-      <h3>To: <ion-note>Me</ion-note></h3>
-    </ion-label>
-  </ion-item>
-  <div class="ion-padding">
-    <h1>{{ message.subject }}</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-  </div> -->
 </ion-content>
 }

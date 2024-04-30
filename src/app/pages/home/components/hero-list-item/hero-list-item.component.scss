@@ -1,0 +1,22 @@
+ion-label {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+ion-item {
+  ion-avatar {
+    margin-inline-end: 0px;
+  }
+}
+
+ion-item h2 {
+  font-weight: 400;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ion-item ion-icon {
+  color: var(--ion-color-marvel-tint);
+}

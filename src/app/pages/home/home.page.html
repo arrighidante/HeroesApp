@@ -17,10 +17,10 @@
 
   <ion-list>
     @for (hero of heroesList(); track hero) {
-    <app-heroe-item
+    <app-hero-item
       [heroeSummary]="hero"
       (heroSelected)="onHeroSelected($event)"
-    ></app-heroe-item>
+    ></app-hero-item>
     }
   </ion-list>
 </ion-content>

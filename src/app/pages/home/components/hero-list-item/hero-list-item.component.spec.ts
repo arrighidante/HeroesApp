@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { HeroPage } from '../../../hero/hero.page';
 
-import { HeroeListItemComponent } from './heroe-list-item.component';
+import { HeroeListItemComponent } from './hero-list-item.component';
 
 describe('MessageComponent', () => {
   let component: HeroeListItemComponent;

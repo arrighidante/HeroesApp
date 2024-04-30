@@ -16,7 +16,7 @@ import { HeroesService } from '@data/services/heroes.service';
 import { IHeroSummary } from '@interfaces/heroe-summary.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { catchError, of } from 'rxjs';
-import { HeroeListItemComponent } from './components/heroe-list-item/heroe-list-item.component';
+import { HeroeListItemComponent } from './components/hero-list-item/hero-list-item.component';
 
 @Component({
   selector: 'app-home',
