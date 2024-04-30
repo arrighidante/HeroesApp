@@ -12,6 +12,9 @@
 
 HeroesApp is an application that interacts with the Marvel API. It displays a list of superheroes and you can view details of each one of them. The content will be displayed based on the default language of the device (or browser).
 
+## ⚠️**Information for reviewers**⚠️
+Search for 'OBS' in the root project folder. I've added several comments regarding the approach I've taken to solve specific situations.
+
 ## Tech-stack :wrench:
 
 - Angular version: 17.3.6
