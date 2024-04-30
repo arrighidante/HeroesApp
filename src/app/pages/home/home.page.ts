@@ -7,7 +7,6 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  RefresherCustomEvent,
 } from '@ionic/angular/standalone';
 
 import { Router } from '@angular/router';
@@ -40,19 +39,23 @@ export class HomePage {
   private _heroesService = inject(HeroesService);
   private _router = inject(Router);
   public heroesList = signal<IHeroSummary[]>([]);
+
   heroesLimit = signal(20);
 
   ionViewWillEnter() {
     // OBS: 3) Different ways to fetch data. Uncomment the one you want to use.
 
-    // Using Angular's HttpClient
-    this.getHeroes();
+    // Prevents fetching data if the list is already populated.
+    if (this.heroesList().length === 0) {
+      // ALT 1) Using Angular's HttpClient
+      this.getHeroes();
 
-    // Using Capacitor's native plugin
-    // this.getHeroesCapacitor();
+      // ALT 2) Using Capacitor's native plugin
+      // this.getHeroesCapacitor();
 
-    // Using Capacitor's community plugin
-    // this.getHeroesCCommunity();
+      // ALT 3) Using Capacitor's community plugin
+      // this.getHeroesCCommunity();
+    }
   }
 
   onHeroSelected(heroId: number) {
@@ -134,9 +137,11 @@ export class HomePage {
     }));
   }
 
-  refresh(ev: any) {
-    setTimeout(() => {
-      (ev as RefresherCustomEvent).detail.complete();
-    }, 3000);
-  }
+  /** Not used now, but this should be useful if
+   * you want to refresh the list of heroes. */
+  // refresh(ev: any) {
+  //   setTimeout(() => {
+  //     (ev as RefresherCustomEvent).detail.complete();
+  //   }, 3000);
+  // }
 }
