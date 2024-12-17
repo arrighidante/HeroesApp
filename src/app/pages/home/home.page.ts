@@ -80,7 +80,6 @@ export class HomePage {
           const heroes: IHero[] = response.data.results;
           const heroesSummaryList: IHeroSummary[] =
             this.mapHerosToSummary(heroes);
-
           this.heroesList.set(heroesSummaryList);
         }
       });
